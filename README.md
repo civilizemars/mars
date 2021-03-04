@@ -25,7 +25,12 @@ Do we need to set up our own tile server? Or can we do it locally on the page? O
 
 # Version 2.0
 
+When we solved the problems above, we want to build new features:
+
 - The map should show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer)
-- Let user choose between different layers. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water.
-- Click to hover quadrant
+- Let user choose between different layers. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
+- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to this:
+![mars_version2](https://user-images.githubusercontent.com/79759818/110023594-a038a800-7d2d-11eb-960c-5660e8b69b12.jpg)
+
+
 
