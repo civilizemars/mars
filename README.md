@@ -11,11 +11,9 @@ Website visitors should be able to
 
 The best approach to loading images seems to be to load different levels of high res images, when zooming in. See the [Nasa Mars map](https://trek.nasa.gov/mars/#) (enable 3d mode), which was built with [Cesium](https://github.com/CesiumGS/cesium).
 
-We could use the [Nasa API](https://api.nasa.gov/?search=mars) and [iTowns](https://github.com/iTowns/itowns) as a client library.
+We could use the [Nasa API](https://api.nasa.gov/?search=mars) with Cesium or with [iTowns](https://github.com/iTowns/itowns) as a client library.
 
 We also need elevation data.
-
-Do we need to set up our own tile server? Or can we do it locally on the page? Or can we use an API?
 
 
 ## Related links
@@ -24,7 +22,7 @@ Do we need to set up our own tile server? Or can we do it locally on the page? O
 - Tools for generating map tiles and hosting them: [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe) or upload image files to [Cesium](https://cesium.com/docs/tutorials/uploading/).
 - High resolution image tiles, for different layers, from [this page](http://www.celestiamotherlode.net/addon/addon_237.html).
 - ([WebGL Earth](http://examples.webglearth.com/#helloworld)), from which I built [this demo](https://60411e2160bdf4000764fe13--compassionate-hodgkin-5fe53e.netlify.app/) on `earth-webgl` branch, using a Mars map from [this API](https://www.openplanetary.org/opm-basemaps/opm-mars-basemap-v0-2).
-- Upload 
+
 
 ---
 
