@@ -21,10 +21,10 @@ Do we need to set up our own tile server? Or can we do it locally on the page? O
 ## Related links
 
 - Mars globe in react three fiber, using react components. ([Demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/)) built from `react` branch.
-- Tools for generating map tiles and hosting them: [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe)
+- Tools for generating map tiles and hosting them: [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe) or upload image files to [Cesium](https://cesium.com/docs/tutorials/uploading/).
 - High resolution image tiles, for different layers, from [this page](http://www.celestiamotherlode.net/addon/addon_237.html).
 - ([WebGL Earth](http://examples.webglearth.com/#helloworld)), from which I built [this demo](https://60411e2160bdf4000764fe13--compassionate-hodgkin-5fe53e.netlify.app/) on `earth-webgl` branch, using a Mars map from [this API](https://www.openplanetary.org/opm-basemaps/opm-mars-basemap-v0-2).
-- 
+- Upload 
 
 ---
 
