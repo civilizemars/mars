@@ -1,4 +1,27 @@
-# mars in threejs
+## mars in threejs ([demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/))
+
+**advantages:**
+
+- depth of terrain through textures/bump.jpg
+
+## mars in react three fiber ([demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/))
+
+**advantages:**
+
+- integrates into react
+
+## mars in earth webGL ([demo](https://determined-nobel-b38288.netlify.app/))
+
+- loads tiles
+- the [API can do animations, etc.](http://examples.webglearth.com/#helloworld)
+
+## what we need
+
+- it should load our own high res tiles.
+  - Could we import tiles into cartodb?
+  - Could we self-host tiles with [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe)
+
+-----
 
 ## Inspiration
 
