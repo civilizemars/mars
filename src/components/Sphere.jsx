@@ -5,7 +5,7 @@ import { useFrame, useLoader } from "react-three-fiber";
 const Sphere = () => {
   const planet = useRef();
 
-  const { nodes } = useLoader(GLTFLoader, "models/Mars_1_6792.glb");
+  const { nodes } = useLoader(GLTFLoader, "models/mars.glb");
 
   useFrame(() => (planet.current.rotation.y += 0.0002));
 
