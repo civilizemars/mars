@@ -1,35 +1,31 @@
-## mars in threejs ([demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/))
+# Version 1.0
 
-- depth of terrain through textures/bump.jpg
+We want a Mars globe in the browser.
 
-## mars in react three fiber ([demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/))
+webGL / three.js seem to be the best stack.
 
-- integrates into react
+Website visitors should be able to
 
-## mars in earth webGL ([demo](https://determined-nobel-b38288.netlify.app/))
+- spin the planet.
+- zoom in and out,
 
-- loads tiles
-- the [API can do animations, etc.](http://examples.webglearth.com/#helloworld)
+The best approach to loading images seems to be to load different levels of high res images, when zooming in. See ([WebGL Earth](http://examples.webglearth.com/#helloworld)), from which I built [this demo](https://60411e2160bdf4000764fe13--compassionate-hodgkin-5fe53e.netlify.app/) on `earth-webgl` branch, using a Mars map from [this API](https://www.openplanetary.org/opm-basemaps/opm-mars-basemap-v0-2).
 
-## what we need
+But instead of using this API, we want to use high resolution images from [this page](http://www.celestiamotherlode.net/addon/addon_237.html).
 
-- it should load our own high res tiles.
-  - Could we import tiles into cartodb?
-  - Could we self-host tiles with [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe)
+Do we need to set up our own tile server? Or can we do it locally on the page? Or can we use some service, like the one above?
 
------
 
-## Inspiration
+## Related links
 
-- Animation changes when scrolling down https://www.nationalgeographic.com/science/graphics/cassini-saturn-nasa-3d-grand-tour
-  - Similar, but already offline https://www.nationalgeographic.com/science/graphics/exploring-mars-map-panorama-pictures
-  - How they made it https://source.opennews.org/articles/how-we-made-rewind-red-planet/
-- How to build Mars with threejs 2020 https://javascript.plainenglish.io/getting-into-three-js-70e99edf1c0e
-- How to build Mars with threejs 2020 https://dev.to/danielkrupnyy/react-three-fiber-planet-mars-3kac , https://codesandbox.io/s/react-three-fiber-planet-mars-wm8ov
-- earth with data on top
-  - https://experiments.withgoogle.com/chrome/globe
-  - https://github.blog/2020-12-21-how-we-built-the-github-globe/
-  - https://2050.earth/
-  - https://news-lab-trends-experiment.appspot.com/
-- Mars globe 2014 https://asherkrim.com/mars/ , https://github.com/Krimit/mars
-- 
+- Mars globe in react three fiber, using react components. ([Demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/)) built from `react` branch.
+- Tools for generating map tiles and hosting them: [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe)
+
+---
+
+# Version 2.0
+
+- The map should show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer)
+- Let user choose between different layers. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water.
+- Click to hover quadrant
+
