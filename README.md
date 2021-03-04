@@ -1,12 +1,8 @@
 ## mars in threejs ([demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/))
 
-**advantages:**
-
 - depth of terrain through textures/bump.jpg
 
 ## mars in react three fiber ([demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/))
-
-**advantages:**
 
 - integrates into react
 
