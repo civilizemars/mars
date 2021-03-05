@@ -30,10 +30,10 @@
             }) */
             
             var orthoSource = new itowns.WMTSSource({
-                url: 'http://wxs.ign.fr/3ht7xcw6f7nciopo16etuqp2/geoportail/wmts',
+                url: 'https://api.nasa.gov/mars-wmts/catalog/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0//default/default028mm/{z}/{y}/{x}.jpg?api_key=kI455uXGhaS6J9YMMabniI9zq5LeRvdEODaDHIfM',
                 name: 'ORTHOIMAGERY.ORTHOPHOTOS',
-                crs: "EPSG:3857",
-                tileMatrixSet: 'PM',
+                crs: "EPSG:104905",
+                tileMatrixSet: 'default028mm',
                 format: 'image/jpeg',
                 zoom: {min: 2, max: 12 }
             });
