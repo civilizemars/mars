@@ -32,6 +32,7 @@
             var orthoSource = new itowns.WMTSSource({
                 url: 'http://wxs.ign.fr/3ht7xcw6f7nciopo16etuqp2/geoportail/wmts',
                 name: 'ORTHOIMAGERY.ORTHOPHOTOS',
+                crs: "EPSG:3857",
                 tileMatrixSet: 'PM',
                 format: 'image/jpeg',
                 zoom: {min: 2, max: 12 }
