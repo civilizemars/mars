@@ -1,20 +1,17 @@
 # Version 1.0
 
-We want a Mars globe in the browser.
+We want a Mars globe in the browser. Similar to this [Nasa Mars map](https://trek.nasa.gov/mars/#).
 
-webGL / three.js seem to be the best stack.
+webGL / three.js / [Cesium](https://github.com/CesiumGS/cesium) seem to be the best stack.
 
 Website visitors should be able to
 
 - spin the planet.
 - zoom in and out,
 
-The best approach to loading images seems to be to load different levels of high res images, when zooming in. See the [Nasa Mars map](https://trek.nasa.gov/mars/#) (enable 3d mode), which was built with [Cesium](https://github.com/CesiumGS/cesium).
+The best approach to loading images seems to be to load different levels of high res images, when zooming in. For which could use the [Nasa API](https://api.nasa.gov/?search=mars).
 
-We could use the [Nasa API](https://api.nasa.gov/?search=mars) with Cesium or with [iTowns](https://github.com/iTowns/itowns) as a client library.
-
-We also need elevation data.
-
+We also want to include a layer of elevation data.
 
 ## Related links
 
