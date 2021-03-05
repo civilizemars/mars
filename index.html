@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Simple globe</title>
+        <title>Simple Mars</title>
         <style>
             html { height: 100%; }
             body { margin: 0; overflow: hidden; height: 100%; }
@@ -31,10 +31,7 @@
             
             var orthoSource = new itowns.WMTSSource({
                 url: 'https://api.nasa.gov/mars-wmts/catalog/Mars_Viking_MDIM21_ClrMosaic_global_232m/1.0.0//default/default028mm/{z}/{y}/{x}.jpg?api_key=kI455uXGhaS6J9YMMabniI9zq5LeRvdEODaDHIfM',
-                name: 'ORTHOIMAGERY.ORTHOPHOTOS',
-                crs: "EPSG:3857",
-                tileMatrixSet: 'default028mm',
-                format: 'image/jpeg',
+ 
                 zoom: {min: 2, max: 12 }
             });
 
