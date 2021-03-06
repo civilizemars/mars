@@ -19,7 +19,7 @@ When we solved the problems above, we want to build new features:
   - https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2
   - https://pds-geosciences.wustl.edu/missions/mgs/megdr.html
 - Show geodata like landing sites, from a [a json file like this](mars_landings.geojson).
-- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to iamge below.
+- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to image below.
 
 # Version 3.0
 
