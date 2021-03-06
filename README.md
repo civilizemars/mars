@@ -18,9 +18,9 @@ When we solved the problems above, we want to build new features:
 - 3D Tiles: Use elevation data to show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer)
 - Show geodata like landing sites, from a [a json file like this](mars_landings.geojson).
 - Let user choose between different layers / WMTS map source. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
+- Set up our own WMTS map server. Because we don't want to get rate limited by the NASA API, and we want to serve our own images.
 - Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to this:
 ![mars_version2](https://user-images.githubusercontent.com/79759818/110023594-a038a800-7d2d-11eb-960c-5660e8b69b12.jpg)
-- Set up our own WMTS map server. Because we don't want to get rate limited by the NASA API, and we want to serve our own images.
 
 ---
 
