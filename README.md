@@ -15,7 +15,9 @@ When zooming in, load different levels of high res images. For which can use the
 
 When we solved the problems above, we want to build new features:
 
-- 3D Tiles: Use elevation data to show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer)
+- 3D Tiles: Use elevation data to show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer). There are different formats of elevation data. For example:
+  - https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2
+  - https://pds-geosciences.wustl.edu/missions/mgs/megdr.html
 - Show geodata like landing sites, from a [a json file like this](mars_landings.geojson).
 - Let user choose between different layers / WMTS map source. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
 - Set up our own WMTS map server. Because we don't want to get rate limited by the NASA API, and we want to serve our own images.
