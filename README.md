@@ -19,9 +19,13 @@ When we solved the problems above, we want to build new features:
   - https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2
   - https://pds-geosciences.wustl.edu/missions/mgs/megdr.html
 - Show geodata like landing sites, from a [a json file like this](mars_landings.geojson).
-- Let user choose between different layers / WMTS map source. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
+- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to iamge below.
+
+# Version 3.0
+
 - Set up our own WMTS map server. Because we don't want to get rate limited by the NASA API, and we want to serve our own images.
-- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to this:
+  - Let user choose between different layers / WMTS map source. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
+
 ![mars_version2](https://user-images.githubusercontent.com/79759818/110023594-a038a800-7d2d-11eb-960c-5660e8b69b12.jpg)
 
 ---
