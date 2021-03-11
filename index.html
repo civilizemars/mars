@@ -5,7 +5,7 @@
     <script>
       function initialize() {
         var earth = new WE.map('earth_div');
-        WE.tileLayer('https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/all/{z}/{x}/{y}.png',{
+        WE.tileLayer('https://astro.arcgis.com/arcgis/rest/services/OnMars/CTX/MapServer/tile/{z}/{y}/{x}',{
           attribution: '© OpenStreetMap contributors'
         }).addTo(earth);
       }
