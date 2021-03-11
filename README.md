@@ -1,3 +1,3 @@
-## mars in earth webGL
+## mars in earth webGL - from seamless CTX data source: http://murray-lab.caltech.edu/CTX/
 
-https://60411e2160bdf4000764fe13--compassionate-hodgkin-5fe53e.netlify.app/
+ https://604a3a37c9c91e0008577906--determined-nobel-b38288.netlify.app/
