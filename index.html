@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Mars</title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #info {
+        
+        visibility: hidden;
+      }
+      .widgetImage {
+        max-width: 100%;
+      }
+      .esri-popup {
+        visibility: hidden;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.18/"></script>
+
+    <script>
+require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/ElevationLayer",
+        "esri/layers/TileLayer",
+        "esri/layers/FeatureLayer",
+        "esri/widgets/LayerList"
+      ], function (Map, SceneView, ElevationLayer, TileLayer, FeatureLayer, LayerList) {
+        const marsElevation = new ElevationLayer({
+          url:
+            "https://astro.arcgis.com/arcgis/rest/services/OnMars/MDEM200M/ImageServer",
+          copyright:
+            "NASA, ESA, HRSC, Goddard Space Flight Center, USGS Astrogeology Science Center, Esri"
+        });
+
+        const marsImagery = new TileLayer({
+          url:
+            "https://astro.arcgis.com/arcgis/rest/services/OnMars/MDIM/MapServer",
+            title: "Imagery",
+          copyright: "USGS Astrogeology Science Center, NASA, JPL, Esri"
+        });
+
+        const map = new Map({
+          ground: {
+            layers: [marsElevation]
+          },
+          layers: [marsImagery]
+        });
+
+        const view = new SceneView({
+          map: map,
+          container: "viewDiv",
+          qualityProfile: "high",
+          // setting the spatial reference for Mars_2000 coordinate system
+          spatialReference: {
+            wkid: 104971
+          },
+          camera: {
+            position: {
+              x: 27.63423,
+              y: -6.34466,
+              z: 1281525.766,
+              spatialReference: 104971
+            },
+            heading: 332.28,
+            tilt: 37.12
+          }
+        });
+
+        const cratersLayer = new FeatureLayer({
+          //url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/Mars_Nomenclature_Mountains/FeatureServer",
+          url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/Mars_Nomenclature_Craters/FeatureServer",
+          definitionExpression: "type = 'Crater, craters'",
+          title: "Craters",
+          visible: false,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                  material: { color: [255, 255, 255, 0.1] },
+                  outline: {
+                    color: [0, 0, 0, 0.4],
+                    size: 2
+                  }
+                }
+              ]
+            }
+          },
+          labelingInfo: [
+            {
+              labelPlacement: "above-center",
+              labelExpressionInfo: { expression: "$feature.NAME" },
+              symbol: {
+                type: "label-3d",
+                symbolLayers: [
+                  {
+                    type: "text",
+                    material: {
+                      color: [0, 0, 0, 0.9]
+                    },
+                    halo: {
+                      size: 2,
+                      color: [255, 255, 255, 0.7]
+                    },
+                    font: {
+                      size: 10
+                    }
+                  }
+                ],
+                verticalOffset: {
+                  screenLength: 40,
+                  maxWorldLength: 500000,
+                  minWorldLength: 0
+                },
+                callout: {
+                  type: "line",
+                  size: 0.5,
+                  color: [255, 255, 255, 0.9],
+                  border: {
+                    color: [0, 0, 0, 0.3]
+                  }
+                }
+              }
+            }
+          ]
+        });
+
+        map.add(cratersLayer);
+
+        const gridLayer = new FeatureLayer({
+          url:
+            "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/Mars_Quadrangle_Grid/FeatureServer",
+          //definitionExpression: "type = 'Grid, grids'",
+          //outFields: ["*"],
+          popupTemplate: { 
+            title: "{QUAD_NAME}"
+          },
+          title: "Grid",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "simple-fill", // autocasts as new SimpleFillSymbol()
+              color: [0, 0, 0, 0],
+              outline: {
+                color: [50, 50, 50, 0.7],
+                width: 10
+              }
+            }
+          }
+          /*renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                  material: { color: [255, 255, 255, 0.1] },
+                  outline: {
+                    color: [0, 0, 0, 0.4],
+                    size: 200
+                  }
+                }
+              ]
+            }
+          },*/
+          /*labelingInfo: [
+            {
+              labelPlacement: "above-center",
+              labelExpressionInfo: { expression: "$feature.QUAD_NAME" },
+              symbol: {
+                type: "label-3d",
+                symbolLayers: [
+                  {
+                    type: "text",
+                    material: {
+                      color: [0, 0, 0, 0.9]
+                    },
+                    halo: {
+                      size: 2,
+                      color: [255, 255, 255, 0.7]
+                    },
+                    font: {
+                      size: 10
+                    }
+                  }
+                ],
+                verticalOffset: {
+                  screenLength: 40,
+                  maxWorldLength: 500000,
+                  minWorldLength: 0
+                },
+                callout: {
+                  type: "line",
+                  size: 5,
+                  color: [255, 255, 255, 0.9],
+                  border: {
+                    color: [0, 0, 0, 0.3]
+                  }
+                }
+              }
+            }
+          ]*/
+        });
+
+        map.add(gridLayer);
+
+        view.popup.autoOpenEnabled = false;
+        // If grid item is hovered
+        view.on("pointer-move", function (event) { 
+         view.hitTest(event).then(function (response) { 
+           if (response.results.length) { 
+             const graphic = response.results.filter(function (result) { 
+               // check if the graphic belongs to the layer of interest 
+               return result.graphic.layer === gridLayer; 
+             })[0].graphic; 
+             // show tooltip
+             view.popup.open({ 
+               location: graphic.geometry.centroid, 
+               features: [graphic]
+             });
+             // populate bottom right widget
+             document.getElementById("info").style.visibility = "visible";
+             document.getElementById("name").innerHTML = response.results[0].graphic.attributes.QUAD_NAME;
+             document.getElementById("latitude").innerHTML = response.results[0].mapPoint.latitude;
+             document.getElementById("longitude").innerHTML = response.results[0].mapPoint.longitude;
+             //console.log(response.results[0].mapPoint.longitude);
+           } else { 
+             view.popup.close();
+             document.getElementById("info").style.visibility = "hidden"; 
+            } 
+          }); 
+        });
+
+        view.ui.add("info", "bottom-right");
+
+        /*const shadedReliefLayer = new TileLayer({
+          url:
+            "https://astro.arcgis.com/arcgis/rest/services/OnMars/MColorDEM/MapServer",
+          copyright: "USGS Astrogeology Science Center, NASA, JPL, ESA, DLR, Esri",
+          title: "Shaded relief",
+          visible: false
+        });
+
+        map.add(shadedReliefLayer);*/
+
+        const layerList = new LayerList({
+          view
+        });
+
+        view.ui.add(layerList, "top-right");
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="info" class="esri-widget esri-widget--panel esri-layer-list">
+      <div class="esri-layer-list__list esri-layer-list__list--root esri-layer-list__list--independent">
+        <span id="name" class="esri-widget__heading"></span>
+        <div class="esri-layer-list__item" aria-labelledby="178515fb7b5-widget-1_178515fb42c-object-9__title">
+          <div class="esri-layer-list__item-container">
+            <div class="esri-layer-list__item-label" tabindex="0" aria-checked="true" role="switch" aria-labelledby="178515fb7b5-widget-1_178515fb42c-object-9__title">
+              <span class="esri-layer-list__item-toggle">
+                <span class="esri-icon-visible" aria-hidden="true">
+                </span>
+              </span>
+              <span id="latitude" title="latitude" aria-label="latitude" class="esri-layer-list__item-title"></span>
+            </div>
+          </div>
+        </div>
+        <div class="esri-layer-list__item" aria-labelledby="178515fb7b5-widget-1_178515fb42c-object-9__title">
+          <div class="esri-layer-list__item-container">
+            <div class="esri-layer-list__item-label" tabindex="0" aria-checked="true" role="switch" aria-labelledby="178515fb7b5-widget-1_178515fb42c-object-9__title">
+              <span class="esri-layer-list__item-toggle">
+                <span class="esri-icon-visible" aria-hidden="true">
+                </span>
+              </span>
+              <span id="longitude" title="longitude" aria-label="longitude" class="esri-layer-list__item-title"></span>
+            </div>
+          </div>
+        </div>
+        <img src="smiley.jpg" class="widgetImage">
+        <div id="trivia" class="esri-button">Get it</div>
+      </div>
+
+      
+    </div>
+  </body>
+</html>
