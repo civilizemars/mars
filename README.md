@@ -11,7 +11,7 @@ Use [these Esri Mars tile maps](https://www.arcgis.com/home/user.html?user=esri_
   - show widget box with information about the area
 
 Two thing I want fixed:
-- I don't want to see the whole grid of grey squares. I only want to see the one colored square which is hovered. Like [this](https://i.imgur.com/WEmvzgU.jpg).
+- I don't want to see the whole grid of grey squares. I only want to see the one colored square which is hovered. Like ![this](https://i.imgur.com/WEmvzgU.jpg)
 - I don't want to see a popup. So right now I hide the popup with `.esri-popup { visibility: hidden; }`. Maybe it's better to use something like [this example](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=view-hittest).
 
 
