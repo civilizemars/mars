@@ -1,38 +1,25 @@
-# Version 1.0
+# Version 1 already working implemented in index.html. See [live demo here](https://thirsty-kirch-dc75b2.netlify.app).
 
-We want a Mars globe in the browser. Similar to this [Nasa Mars map](https://trek.nasa.gov/mars/#).
+We want a Mars globe in the browser. Similar to this [demo using esri API](https://explore-mars.esri.com/).
 
-webGL / three.js / [Cesium](https://github.com/CesiumGS/cesium) seem to be the best stack.
+Use [these Esri Mars tile maps](https://www.arcgis.com/home/user.html?user=esri_astro) for images and elevation data.
 
-Website visitors should be able to
+# Feature 2: Grid layer
 
-- spin the planet.
-- zoom in and out,
+- Hover area, to
+  - show square around area
+  - show widget box with information about the area
 
-When zooming in, load different levels of high res images. For which can use the [Nasa API](https://api.nasa.gov/?search=mars).
+Two thing I want fixed:
+- I don't want to see the whole grid of grey squares. I only want to see the one colored square which is hovered. Like [this](https://i.imgur.com/WEmvzgU.jpg).
+- I don't want to see a popup. So right now I hide the popup with `.esri-popup { visibility: hidden; }`. Maybe it's better to use something like [this example](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=view-hittest).
 
-# Version 2.0
 
-When we solved the problems above, we want to build new features:
+# Feature 3: Twitter
 
-- 3D Tiles: Use elevation data to show the depth of terrain. Like in ([this demo](https://60411c631a034500071134b2--compassionate-hodgkin-5fe53e.netlify.app/)), built in the `threejs` branch (using textures/bump.jpg layer). There are different formats of elevation data. For example:
-  - https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendDEM_Global_200mp_v2
-  - https://pds-geosciences.wustl.edu/missions/mgs/megdr.html
-- Show geodata like landing sites, from a [a json file like this](mars_landings.geojson).
-- Click one section - like a square of 100 kilometers - to show a black square line around that same area. Similar to image below.
-
-# Version 3.0
-
-- Set up our own WMTS map server. Because we don't want to get rate limited by the NASA API, and we want to serve our own images.
-  - Let user choose between different layers / WMTS map source. Like in [this example](https://source.opennews.org/articles/how-we-made-rewind-red-planet), where users can choose between a normal Mars map today, and one with water on the lower surface of Mars.
-
-![mars_version2](https://user-images.githubusercontent.com/79759818/110023594-a038a800-7d2d-11eb-960c-5660e8b69b12.jpg)
-
----
-
-## Related links
-
-- Mars globe in react three fiber, using react components. ([Demo](https://6040f862046d3300076eb558--compassionate-hodgkin-5fe53e.netlify.app/)) built from `react` branch.
-- Tools for generating map tiles and hosting them: [carto.js](https://github.com/CartoDB/carto.js) or [TileStache](https://github.com/TileStache/TileStache) or [maptiler](https://support.maptiler.com/i70-create-a-3d-online-globe) or upload image files to [Cesium](https://cesium.com/docs/tutorials/uploading/).
-- High resolution image tiles, for different layers, from [this page](http://www.celestiamotherlode.net/addon/addon_237.html).
-- ([WebGL Earth](http://examples.webglearth.com/#helloworld)), from which I built [this demo](https://60411e2160bdf4000764fe13--compassionate-hodgkin-5fe53e.netlify.app/) on `earth-webgl` branch, using a Mars map from [this API](https://www.openplanetary.org/opm-basemaps/opm-mars-basemap-v0-2).
+- twitter feature (similar as implemented [here](https://explore-mars.esri.com/))
+  - send tweet
+    - screenshot, coordinates, zoom level and text
+  - show tweet on the map
+    - coordinates, zoom level, tweet 
+![esri twitter](https://i.imgur.com/kASCx9d.png)
