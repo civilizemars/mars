@@ -8,7 +8,7 @@ Use [these Esri Mars tile maps](https://www.arcgis.com/home/user.html?user=esri_
 
 - Hover area, to
   - show square around area
-  - show widget box with information about the area
+  - show widget box with information about the area, including the image corresponding to the hovered coordinates.
 
 Three things I want fixed:
 - Instead of using [this Grid data](https://github.com/civilizemars/mars/blob/a148bde8f03db2cf7653a5f4caf5b1b2f119f4ea/index.html#L146), I want to use the grid of images I exported from ArcGIS Pro with "Split Raster" tool. See the files in the [`example export`](https://github.com/civilizemars/mars/tree/esri-api/example%20export) folder.
