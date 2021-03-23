@@ -24,12 +24,3 @@ Three things I want fixed:
     - coordinates, zoom level, tweet 
 ![esri twitter](https://i.imgur.com/kASCx9d.png)
 
-
-
-
-Grid
-
-- I want to show a grid
-  - How do I export the coordinate data?
-  - How do I use this data to show as a grid on the website?
-- 
