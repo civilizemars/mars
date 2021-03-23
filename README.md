@@ -10,10 +10,10 @@ Use [these Esri Mars tile maps](https://www.arcgis.com/home/user.html?user=esri_
   - show square around area
   - show widget box with information about the area
 
-Two thing I want fixed:
+Three things I want fixed:
 - I don't want to see the whole grid of grey squares. I only want to see the one colored square which is hovered. Like ![this](https://i.imgur.com/WEmvzgU.jpg)
 - I don't want to see a popup. So right now I hide the popup with `.esri-popup { visibility: hidden; }`. Maybe it's better to use something like [this example](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=view-hittest).
-
+- Instead of using [this Grid data](https://github.com/civilizemars/mars/blob/a148bde8f03db2cf7653a5f4caf5b1b2f119f4ea/index.html#L146), I want to use the grid of images I exported from ArcGIS Pro with "Split Raster" tool. See the files in the [`example export`](https://github.com/civilizemars/mars/tree/esri-api/example%20export) folder.
 
 ## Feature 3: Twitter
 
@@ -23,3 +23,13 @@ Two thing I want fixed:
   - show tweet on the map
     - coordinates, zoom level, tweet 
 ![esri twitter](https://i.imgur.com/kASCx9d.png)
+
+
+
+
+Grid
+
+- I want to show a grid
+  - How do I export the coordinate data?
+  - How do I use this data to show as a grid on the website?
+- 
