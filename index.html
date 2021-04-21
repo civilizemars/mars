@@ -37,12 +37,12 @@ require([
         "esri/layers/FeatureLayer",
         "esri/widgets/LayerList"
       ], function (Map, SceneView, ElevationLayer, TileLayer, FeatureLayer, LayerList) {
-        const marsElevation = new ElevationLayer({
+        /*const marsElevation = new ElevationLayer({
           url:
             "https://astro.arcgis.com/arcgis/rest/services/OnMars/MDEM200M/ImageServer",
           copyright:
             "NASA, ESA, HRSC, Goddard Space Flight Center, USGS Astrogeology Science Center, Esri"
-        });
+        });*/
 
         const marsImagery = new TileLayer({
           url:
@@ -52,9 +52,9 @@ require([
         });
 
         const map = new Map({
-          ground: {
+          /*ground: {
             layers: [marsElevation]
-          },
+          },*/
           layers: [marsImagery]
         });
 
